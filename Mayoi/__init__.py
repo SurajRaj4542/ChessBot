@@ -15,7 +15,7 @@ app = Client(
     "mayoi",
     api_id = 1639263,
     api_hash = "bb491a5c6b6ab5cd510325d474908d49",
-    bot_token="1431085343:AAEQCA2JN0bHRpCGUSGsprCB_H6gvmEpsRg"
+    bot_token="1652690019:AAHontptuFFuolfhNPO91H8hws1s2bWmaDg"
 )
 
 files = glob.glob(join(join(dirname(__file__),'Handlers'),'*py'))
