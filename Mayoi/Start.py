@@ -12,8 +12,7 @@ GoBack = InlineKeyboardMarkup(inline_keyboard=[[
     InlineKeyboardButton('Back',callback_data='Back'),]])
 
 updatechannel = [[InlineKeyboardButton(text='Updates Channel',url='https://t.me/AW_Updates')]]
-updatechannel += InlineKeyboardMarkup(inline_keyboard=[[
-    InlineKeyboardButton('Back',callback_data='Back'),]])
+updatechannel += InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton('Back',callback_data='Back')]])
 
 async def start(client,msg):
      if msg.chat.type == 'private':
