@@ -20,7 +20,7 @@ async def start(client,msg):
          await msg.reply_animation(animation='https://i.pinimg.com/originals/47/b7/32/47b732bdcc3f9e92844bf3c7853316c1.gif', caption=Strings.START_TEXT,
           parse_mode='html', reply_markup=StartMarkup)
 
-         await saveNewUser(message=msg)
+         saveNewUser(msg)
 
      else:
          groupButtons = [[InlineKeyboardButton(text='STOP IT get some help',url='https://t.me/AW_ChessBot?start=start')]]
