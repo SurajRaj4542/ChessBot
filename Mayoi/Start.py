@@ -11,7 +11,7 @@ StartMarkup = InlineKeyboardMarkup(inline_keyboard=startButtons)
 GoBack = InlineKeyboardMarkup(inline_keyboard=[[
     InlineKeyboardButton('Back',callback_data='Back'),]])
 
-updatechannel = [[InlineKeyboardButton('Help & Commands',callback_data='Help'),]]
+updatechannel = [[InlineKeyboardButton(text='Updates Channel',url='https://t.me/AW_Updates')]]
 updatechannel += InlineKeyboardMarkup(inline_keyboard=[[
     InlineKeyboardButton('Back',callback_data='Back'),]])
 
