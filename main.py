@@ -50,9 +50,10 @@ async def info(client,msg):
     bio = userInfo.bio
     group = msg.chat.title
     username = userInfo.username if userInfo.username != None else f'[‌‌{name}](tg://user?id={id})'
-    pic = await client.get_profile_photos(id,limit=1)
+    pic = client.get_profile_photos(id,limit=1)
+    pic = pic[0].file_id if pic else 'noPic.jpeg'
     
-    await msg.reply_photo(photo=pic[0]['file_id'], caption=Strings.INFO_TEXT.format(name=name,username=username,id=id,strength=fnostrength,rank=rankuwu,bio=bio, group=group),
+    await msg.reply_photo(photo=pic, caption=Strings.INFO_TEXT.format(name=name,username=username,id=id,strength=fnostrength,rank=rankuwu,bio=bio, group=group),
                         parse_mode='html')
 
     
