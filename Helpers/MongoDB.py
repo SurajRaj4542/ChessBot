@@ -58,10 +58,10 @@ def ranking(userid):
         rank = "ANBU Level"
 
     elif strength > 70 and strength < 80:
-        rank = "Jounin Level"
+        rank = "Kage Level"
 
     elif strength > 80 and strength <90:
-        rank = "Kage Level"
+        rank = "S-Class"
 
     elif strength > 90 and strength < 95:
         rank = "SS-Class"
