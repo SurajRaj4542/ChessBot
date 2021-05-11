@@ -12,7 +12,8 @@ GoBack = InlineKeyboardMarkup(inline_keyboard=[[
     InlineKeyboardButton('Back',callback_data='Back'),]])
 
 updatechannel = [[InlineKeyboardButton(text='Updates Channel',url='https://t.me/AW_Updates')]]
-updatechannel += InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton('Back',callback_data='Back')]])
+updatechannel += [[InlineKeyboardButton('Back',callback_data='Back')]]
+markup = InlineKeyboardMarkup(updatechannel)
 
 async def start(client,msg):
      if msg.chat.type == 'private':
@@ -37,7 +38,7 @@ async def startCallbacks(client, query):
         await query.edit_message_text(Strings.ABOUT_TEXT,reply_markup=GoBack)
     
     elif query.data=="Updates":
-        await query.edit_message_text(Strings.UPDATES_TEXT,reply_markup=updatechannel)
+        await query.edit_message_text(Strings.UPDATES_TEXT,reply_markup=markup)
     
     elif query.data=="Back":
         await query.edit_message_text(Strings.START_TEXT,reply_markup=StartMarkup)              
