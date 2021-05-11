@@ -15,7 +15,7 @@ GroupMarkup = InlineKeyboardMarkup(groupButtons)
 BackMarkup = InlineKeyboardMarkup(backButton)
 UpdateMarkup = InlineKeyboardMarkup(updateButtons)
 
-@app.on_message(filters.command('start'))
+@app.on_message(filters.command('start','start@AW_Chessbot'))
 async def start(client,msg):
      if msg.chat.type == 'private':
         await msg.reply_animation(animation='https://i.pinimg.com/originals/47/b7/32/47b732bdcc3f9e92844bf3c7853316c1.gif',
