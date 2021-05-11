@@ -1,4 +1,4 @@
-async def getUserid(client,msg):
+async def getUserId(client,msg):
     if msg.reply_to_message:
         userid = msg.reply_to_message.from_user.id
         name = f"""{msg.reply_to_message.from_user.first_name}"""
