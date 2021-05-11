@@ -1,8 +1,8 @@
 class Strings:
     START_TEXT = """Hello, I'm Anime World Chess Bot  (~˘▾˘)~
-    
-    Created by @Join_AnimeWorld for Managing Wins & Loss in Our <a href="https://t.me/JoinChessWorld">Chess group</a>
-    Learn How to use me by using the buttons below """
+
+Created by @Join_AnimeWorld for Managing Wins & Loss in Our <a href="https://t.me/JoinChessWorld">Chess group</a>
+Learn How to use me by using the buttons below """
 
     GROUP_START_TEXT = """Hello, Nadeko is alive, 
 Checkout /help for getting instructions and useful features (≧▽≦)"""
@@ -13,7 +13,7 @@ Checkout /help for getting instructions and useful features (≧▽≦)"""
 /add - add strength to your fellow adventurer 
 /strength - check your strength 
 /info - get your or user's info
-  Hope, You'll Join your Stay in our <a herf="https://t.me/JoinCHessWorld">Chess/Gaming Group</a>"""
+Hope, You'll Join your Stay in our <a herf="https://t.me/JoinCHessWorld">Chess/Gaming Group</a>"""
 
     ABOUT_TEXT = """An Interesting Statistics Management Bot Made with ❤️ By @JoinAnimeWorld.
 Special Thanks To:-
