@@ -1,6 +1,6 @@
 from ..Handlers.__init__ import *
 
-@app.on_message(filters.command(['info','info@im_testing2bot']))
+@app.on_message(filters.command(['info','info@AW_ChessBot']))
 async def info(client,msg):
     id = await getUserId(client,msg)
     id = id[0]
