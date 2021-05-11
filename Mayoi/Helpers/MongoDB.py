@@ -1,10 +1,9 @@
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://chessbot:chessbot@cluster0.bq5rv.mongodb.net/chessbot?retryWrites=true&w=majority")
+client = MongoClient("mongodb://chessbot:chessbot@cluster0-shard-00-00.bq5rv.mongodb.net:27017,cluster0-shard-00-01.bq5rv.mongodb.net:27017,cluster0-shard-00-02.bq5rv.mongodb.net:27017/chessbot?ssl=true&replicaSet=atlas-iz1tnx-shard-0&authSource=admin&retryWrites=true&w=majority")
 Database = client['chessbot']
 Users = Database['Users']
 Events = Database['Events']
-
 
 def saveNewUser(message):
     userDoc = {
@@ -14,12 +13,9 @@ def saveNewUser(message):
         'strength':0
     }
 
-    try:
-        tryUser =  Users.find_one({'_id':message.from_user.id})
-        if not tryUser:
-           Users.insert_one(userDoc)
-    except Exception as e:
-        print(f'Failed to Insert {message.from_user.id} in Db.')
+    tryUser =  Users.find_one({'_id':message.from_user.id})
+    if not tryUser:
+        Users.insert_one(userDoc)
 
 def addstrength(userid):
     user = Users.find_one({'_id':userid})
@@ -30,9 +26,10 @@ def addstrength(userid):
 
     
 def showstrength(userid):
-        user = Users.find_one({'_id':userid})
-        strength = user['strength']
-        return strength  
+    user = Users.find_one({'_id':userid})
+    strength = user['strength']
+
+    return strength  
 
 
 def ranking(userid):
@@ -58,10 +55,10 @@ def ranking(userid):
         rank = "ANBU Level"
 
     elif strength > 70 and strength < 80:
-        rank = "Kage Level"
+        rank = "Jounin Level"
 
     elif strength > 80 and strength <90:
-        rank = "S-Class"
+        rank = "Kage Level"
 
     elif strength > 90 and strength < 95:
         rank = "SS-Class"
