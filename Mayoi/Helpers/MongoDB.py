@@ -39,31 +39,31 @@ def ranking(userid):
     if strength > 0 and strength < 10:
         rank = "Academy Student Level"
 
-    elif strength > 10 and strength < 20:
+    elif strength >= 10 and strength < 20:
         rank = "Genin Level"
 
-    elif strength > 20 and strength < 30:
+    elif strength >= 20 and strength < 30:
         rank = "Chunin Level"
 
-    elif strength > 30 and strength < 40:
+    elif strength >= 30 and strength < 40:
         rank = "Jounin Level"
 
-    elif strength > 40 and strength < 50:
+    elif strength >= 40 and strength < 50:
         rank = "Special Jounin Level"
 
-    elif strength > 60 and strength < 70:
+    elif strength >= 60 and strength < 70:
         rank = "ANBU Level"
 
-    elif strength > 70 and strength < 80:
+    elif strength >= 70 and strength < 80:
         rank = "Jounin Level"
 
-    elif strength > 80 and strength <90:
+    elif strength >= 80 and strength <90:
         rank = "Kage Level"
 
-    elif strength > 90 and strength < 95:
+    elif strength >= 90 and strength < 95:
         rank = "SS-Class"
 
-    elif strength > 95:
+    elif strength >= 95:
         rank = "SSS-Class"
 
     else:
