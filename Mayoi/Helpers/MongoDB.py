@@ -36,7 +36,7 @@ def ranking(userid):
     user = Users.find_one({'_id':userid})
     strength = user['strength']
 
-    if strength > 0 and strength < 10:
+    if int(strength) > 0 and int(strength) < 10:
         rank = "Academy Student Level"
 
     elif strength >= 10 and strength < 20:
