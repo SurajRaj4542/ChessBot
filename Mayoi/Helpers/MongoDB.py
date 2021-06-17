@@ -61,7 +61,7 @@ def ranking(userid):
         rank = "Kage Level"
 
     elif strength >= 80 and strength <90:
-        rank = "s-Class'
+        rank = "s-Class"
 
     elif strength >= 90 and strength < 95:
         rank = "SS-Class"
