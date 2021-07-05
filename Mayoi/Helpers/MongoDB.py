@@ -24,6 +24,12 @@ def addstrength(userid):
 
     return strength+1
 
+def delstrength(userid):
+    user = Users.find_one({'_id':userid})
+    strength = user['strength']
+    Users.update({'_id':userid},{'$set':{'strength':strength-1}})
+
+    return strength-1
     
 def showstrength(userid):
     user = Users.find_one({'_id':userid})
