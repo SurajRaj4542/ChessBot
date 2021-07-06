@@ -1,22 +1,21 @@
 import asyncio
-from bson.son import SON
 from ..Handlers.__init__ import *
 
 
-async def mention(userid):
+async def mention(userid, client):
     user = await client.get_chat(userid)
-    return user.first_name
-
+    return (user.id, user.first_name)
 
 @app.on_message(filters.command(['ranking','ranking@AW_ChessBot']))
-async def ranking(client:Client,msg:Message):
-    pipeline = [{"$sort":SON([("strength",-1)])}]
-    sortedUsers = list(Users.aggregate(pipeline))
- 
+async def ranking(client:Client,msg:Message): 
+    sortedUsers = await getSorted()
 
-    top =  await asyncio.gather(*[mention(user['_id']) for user in sortedUsers[:10]])
-    text = "Top User"
+    top =  await asyncio.gather(*[mention(user['_id'], client) for user in sortedUsers[:10]])
+    text = "<b>&gt;&gt;<u> <a href=\"https://t.me/JOINCHESSWORLD\">Top 10 Players</u></b></a>\n"
     for user in top:
-        text += f'\n{user}'
+        for userdb in sortedUsers:
+            if user[0] == userdb['_id']:
+                text += f'\n<b>‣</b> {userdb["strength"]} - {user[1]}'
+                break
 
-    await msg.reply(text)
+    await msg.reply(text, disable_web_page_preview=True)
