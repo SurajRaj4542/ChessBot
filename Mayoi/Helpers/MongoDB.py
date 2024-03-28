@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.son import SON
 
-client = MongoClient("mongodb://chessbot:chessbot@cluster0-shard-00-00.bq5rv.mongodb.net:27017,cluster0-shard-00-01.bq5rv.mongodb.net:27017,cluster0-shard-00-02.bq5rv.mongodb.net:27017/chessbot?ssl=true&replicaSet=atlas-iz1tnx-shard-0&authSource=admin&retryWrites=true&w=majority")
+client = MongoClient("DB_URI")
 Database = client['chessbot']
 Users = Database['Users']
 Events = Database['Events']
