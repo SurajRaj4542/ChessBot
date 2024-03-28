@@ -13,9 +13,9 @@ from pyrogram import Client
 
 app = Client(
     "mayoi",
-    api_id = 1639263,
-    api_hash = "bb491a5c6b6ab5cd510325d474908d49",
-    bot_token="1652690019:AAHontptuFFuolfhNPO91H8hws1s2bWmaDg"
+    api_id = API_ID,
+    api_hash = "API_HASH",
+    bot_token="BOT_TOKEN"
 )
 
 files = glob.glob(join(join(dirname(__file__),'Handlers'),'*py'))
